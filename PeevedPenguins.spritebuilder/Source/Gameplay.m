@@ -14,6 +14,7 @@
     CCNode *_catapultArm;
     CCNode *_levelNode;
     CCNode *_contentNode;
+    CCPhysicsJoint *_pullbackNode;
     
 }
 
@@ -27,6 +28,8 @@
     
     //visualize physics joint
     _physicsNode.debugDraw = TRUE;
+    
+    _pullbackNode.physicsBody.collisionMask = @[];
 }
 
 //called on every touch
