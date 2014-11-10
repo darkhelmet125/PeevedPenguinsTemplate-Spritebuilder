@@ -69,7 +69,7 @@
 					<key>collisionType</key>
 					<string></string>
 					<key>cornerRadius</key>
-					<real>16</real>
+					<real>12</real>
 					<key>density</key>
 					<real>1</real>
 					<key>dynamic</key>
@@ -161,6 +161,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -192,7 +194,7 @@
 					<key>collisionType</key>
 					<string></string>
 					<key>cornerRadius</key>
-					<real>16</real>
+					<real>12</real>
 					<key>density</key>
 					<real>1</real>
 					<key>dynamic</key>
@@ -284,8 +286,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -317,7 +317,7 @@
 					<key>collisionType</key>
 					<string></string>
 					<key>cornerRadius</key>
-					<real>16</real>
+					<real>12</real>
 					<key>density</key>
 					<real>1</real>
 					<key>dynamic</key>
@@ -353,8 +353,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>171</real>
-							<real>19</real>
+							<real>172</real>
+							<real>18</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
