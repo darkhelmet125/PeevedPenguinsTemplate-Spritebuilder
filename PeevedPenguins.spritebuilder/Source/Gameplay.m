@@ -40,12 +40,12 @@
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
     //start catapult dragging when touch begins in catapult arm.
-    if (CGRectContainsPoint([_catapultArm.boundingBox], touchLocation)) {
+    if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
         //move _mouseJointNode to touch location
         _mouseJointNode.position = touchLocation;
         
         //setup spring joint between _mouseJoint and _catapultArm
-        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
+        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
     }
 }
 
