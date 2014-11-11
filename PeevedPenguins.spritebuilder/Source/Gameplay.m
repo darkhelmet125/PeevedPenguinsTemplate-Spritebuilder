@@ -92,6 +92,7 @@
 -(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
     //when touches end release catapult
     [self releaseCatapult];
+    [self launchPenguin];
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
