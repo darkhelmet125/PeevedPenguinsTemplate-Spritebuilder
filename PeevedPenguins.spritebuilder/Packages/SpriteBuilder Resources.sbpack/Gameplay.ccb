@@ -552,9 +552,9 @@
 								<key>physicsBody</key>
 								<dict>
 									<key>affectedByGravity</key>
-									<false/>
+									<true/>
 									<key>allowsRotation</key>
-									<false/>
+									<true/>
 									<key>bodyShape</key>
 									<integer>0</integer>
 									<key>collisionCategories</key>
@@ -570,9 +570,9 @@
 									<key>dynamic</key>
 									<true/>
 									<key>elasticity</key>
-									<real>0.0</real>
+									<real>1</real>
 									<key>friction</key>
-									<real>0.0</real>
+									<real>1</real>
 									<key>points</key>
 									<array>
 										<array>
