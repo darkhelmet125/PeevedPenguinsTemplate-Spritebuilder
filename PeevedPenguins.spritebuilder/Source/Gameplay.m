@@ -17,6 +17,8 @@
     CCPhysicsNode *_pullbackNode;
     CCNode *_mouseJointNode;
     CCPhysicsJoint *_mouseJoint;
+    CCNode *_currentPenguin;
+    CCPhysicsJoint *_penguinCatapultJoint;
     
 }
 
@@ -47,6 +49,24 @@
         //setup spring joint between _mouseJoint and _catapultArm
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
     }
+    
+    //create penguin from ccb file
+    _currentPenguin = [CCBReader load:@"Penguin"];
+    
+    //initial position in catapult bowl; 34, 138 is position of the node
+    CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34, 138)];
+    
+    //transform world position to node space to which penguin will be added (_physicsNode)
+    _currentPenguin.position = [_physicsNode convertToNodeSpace:penguinPosition];
+    
+    //add to physics world
+    [_physicsNode addChild:_currentPenguin];
+    
+    //don't allow rotation for penguin
+    _currentPenguin.physicsBody.allowsRotation = FALSE;
+    
+    //create joint to keep penguin in catapult bowl
+    _penguinCatapultJoint = [CCPhysicsJoint connectedPivotJointWithBodyA:_currentPenguin.physicsBody bodyB:_catapultArm.physicsBody anchorA:_currentPenguin.anchorPointInPoints];
 }
 
 -(void) launchPenguin {
@@ -87,12 +107,22 @@
         [_mouseJoint invalidate];
         _mouseJoint = nil;
     }
+    
+    //releases joint and lets penguin fly
+    [_penguinCatapultJoint invalidate];
+    _penguinCatapultJoint = nil;
+    
+    //after snapping rotation is okay
+    _currentPenguin.physicsBody.allowsRotation = TRUE;
+    
+    //follow current penguin
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+    [_contentNode runAction:follow];
 }
 
 -(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
     //when touches end release catapult
     [self releaseCatapult];
-    [self launchPenguin];
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
