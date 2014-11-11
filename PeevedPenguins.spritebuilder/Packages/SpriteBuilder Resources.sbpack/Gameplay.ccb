@@ -422,8 +422,8 @@
 									<key>points</key>
 									<array>
 										<array>
-											<real>0.0</real>
-											<real>0.0</real>
+											<real>-0.050750732421875</real>
+											<real>14.015655517578125</real>
 										</array>
 										<array>
 											<real>0.0</real>
@@ -434,16 +434,24 @@
 											<real>177</real>
 										</array>
 										<array>
-											<real>42</real>
-											<real>0.0</real>
+											<real>40.640655517578125</real>
+											<real>101.00787353515625</real>
+										</array>
+										<array>
+											<real>25.035186767578125</real>
+											<real>14.667999267578125</real>
 										</array>
 									</array>
 									<key>polygons</key>
 									<array>
 										<array>
 											<array>
-												<real>42</real>
-												<real>0.0</real>
+												<real>25.035186767578125</real>
+												<real>14.667999267578125</real>
+											</array>
+											<array>
+												<real>40.640655517578125</real>
+												<real>101.00787353515625</real>
 											</array>
 											<array>
 												<real>42</real>
@@ -454,8 +462,8 @@
 												<real>177</real>
 											</array>
 											<array>
-												<real>0.0</real>
-												<real>0.0</real>
+												<real>-0.050750732421875</real>
+												<real>14.015655517578125</real>
 											</array>
 										</array>
 									</array>
@@ -533,6 +541,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -570,9 +580,9 @@
 									<key>dynamic</key>
 									<true/>
 									<key>elasticity</key>
-									<real>1</real>
+									<real>0.30000001192092896</real>
 									<key>friction</key>
-									<real>1</real>
+									<real>0.30000001192092896</real>
 									<key>points</key>
 									<array>
 										<array>
@@ -703,8 +713,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
