@@ -15,6 +15,7 @@
     self.physicsBody.collisionType = @"Seal";
 }
 
+/*
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair*)pair Seal:(CCNode*)nodeA wildcard:(CCNode*)nodeB {
     float energy = [pair totalKineticEnergy];
     
@@ -23,5 +24,6 @@
         [[_physicsNode]]
     }
 }
-
+*/
+ 
 @end
