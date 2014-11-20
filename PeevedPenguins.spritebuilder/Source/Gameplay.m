@@ -7,6 +7,7 @@
 //
 
 #import "Gameplay.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Gameplay {
 
@@ -41,7 +42,7 @@
 }
 
 //called on every touch
--(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
     //start catapult dragging when touch begins in catapult arm.
@@ -98,7 +99,7 @@
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
 }
 
--(void) touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     //when a touch moves make _mouseJointNode same as touchLocation
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     _mouseJointNode.position = touchLocation;
@@ -134,7 +135,25 @@
 }
 
 -(void) ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
-    CCLOG(@"Something collided with a seal");
+    float energy = [pair totalKineticEnergy];
+    
+    //if energy is high enough remove seal
+    if (energy > 5000.f) {
+        [[_physicsNode space]addPostStepBlock:^{[self sealRemoved:nodeA];} key:nodeA];
+    }
+}
+
+-(void) sealRemoved:(CCNode*)seal {
+    //load particle effect
+    CCParticleSystem* explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
+    //make the particle effect clean itself up, once it is complete
+    explosion.autoRemoveOnFinish = TRUE;
+    //place the particle effect on the seals position
+    explosion.position = seal.position;
+    //add particle effect to the same node as the seal is on
+    [seal.parent addChild:explosion];
+    
+    [seal removeFromParent];
 }
 
 @end

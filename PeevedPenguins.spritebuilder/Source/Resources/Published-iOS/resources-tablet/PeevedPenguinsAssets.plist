@@ -59,7 +59,7 @@
 		<key>PeevedPenguinsAssets/button.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{163, 1285}, {334, 305}}</string>
+			<string>{{188, 1285}, {334, 305}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -72,13 +72,13 @@
 		<key>PeevedPenguinsAssets/catapult.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 1285}, {430, 160}}</string>
+			<string>{{1, 1285}, {430, 185}}</string>
 			<key>offset</key>
-			<string>{0, -13}</string>
+			<string>{0, 0}</string>
 			<key>rotated</key>
 			<true/>
 			<key>sourceColorRect</key>
-			<string>{{0, 25}, {430, 160}}</string>
+			<string>{{0, 0}, {430, 185}}</string>
 			<key>sourceSize</key>
 			<string>{430, 185}</string>
 		</dict>

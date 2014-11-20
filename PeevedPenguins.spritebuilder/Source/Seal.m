@@ -7,7 +7,6 @@
 //
 
 #import "Seal.h"
-#import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Seal
 
@@ -15,15 +14,8 @@
     self.physicsBody.collisionType = @"Seal";
 }
 
-/*
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair*)pair Seal:(CCNode*)nodeA wildcard:(CCNode*)nodeB {
-    float energy = [pair totalKineticEnergy];
     
-    //if energy is high enough remove seal
-    if (energy > 5000.f) {
-        [[_physicsNode]]
-    }
 }
-*/
  
 @end
