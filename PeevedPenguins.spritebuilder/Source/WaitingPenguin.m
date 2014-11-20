@@ -9,8 +9,6 @@
 #import "WaitingPenguin.h"
 
 @implementation WaitingPenguin
-{
-}
 
 -(void)didLoadFromCCB
 {
